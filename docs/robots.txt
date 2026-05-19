@@ -6,4 +6,4 @@ Disallow: /assets/js/
 Disallow: /assets/css/
 Disallow: /.git/
 
-Sitemap: https://ajaychauhan.dev/sitemap.xml
+Sitemap: https://mobiledevajay.com/sitemap.xml
