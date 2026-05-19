@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block any accidental sensitive paths
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: /.git/
+
+Sitemap: https://ajaychauhan.dev/sitemap.xml

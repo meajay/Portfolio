@@ -1,606 +1,585 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ajay Chauhan · Senior Android Engineer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Syne:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#07050f;--bg2:#0c0917;--surface:#120e20;--surface2:#1a1530;
-  --border:rgba(160,120,255,.1);--border2:rgba(160,120,255,.2);
-  --purple:#a855f7;--purple-lt:#c084fc;--purple-dk:#7c3aed;
-  --violet:#8b5cf6;--pink:#e879f9;--blue:#818cf8;
-  --purple-glow:rgba(168,85,247,.35);--purple-dim:rgba(168,85,247,.12);--purple-faint:rgba(168,85,247,.05);
-  --text:#f0eaff;--text-muted:#9d8fbf;--text-dim:#4a3d6a;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;cursor:none;}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajay Chauhan · Best Senior Android Engineer | Hire Top Mobile Developer</title>
 
-/* CURSOR */
-#cur{width:10px;height:10px;background:var(--purple);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .15s,height .15s;mix-blend-mode:screen;}
-#cur-ring{width:38px;height:38px;border:1.5px solid rgba(168,85,247,.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .22s,height .22s,border-color .2s;}
+    <!-- ═══ Security Headers ═══ -->
+    <!-- CSP: restricts resource origins, disallows framing, limits form targets -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; object-src 'none';">
+    <!-- Prevent MIME-type sniffing -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <!-- Deny framing entirely -->
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <!-- Send minimal referrer info to third parties -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <!-- Disable browser features not used on this site -->
+    <meta http-equiv="Permissions-Policy"
+        content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()">
 
-/* BG ORBS */
-.orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(80px);}
-.orb1{width:500px;height:500px;background:radial-gradient(circle,rgba(124,58,237,.18),transparent 70%);top:-100px;right:-50px;animation:fl1 8s ease-in-out infinite;}
-.orb2{width:400px;height:400px;background:radial-gradient(circle,rgba(232,121,249,.1),transparent 70%);bottom:10%;left:-80px;animation:fl2 10s ease-in-out infinite;}
-.orb3{width:300px;height:300px;background:radial-gradient(circle,rgba(129,140,248,.1),transparent 70%);top:50%;left:40%;animation:fl1 12s ease-in-out infinite reverse;}
-@keyframes fl1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.1)}}
-@keyframes fl2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-20px,20px) scale(1.08)}}
+    <!-- ═══ SEO & Metadata ═══ -->
+    <meta name="description"
+        content="Ajay Chauhan is a top-rated Senior Android Engineer with 8+ years building world-class mobile apps for 10M+ users. Expert in Kotlin, Jetpack Compose &amp; scalable architecture. Available to hire for Android development, mobile consulting, and SDK engineering globally.">
+    <meta name="keywords"
+        content="best Android developer, top Android engineer, hire Android developer, best mobile developer, senior Android engineer for hire, top mobile app developer, Kotlin developer, Jetpack Compose expert, Android app development, custom Android app, mobile developer India, Android engineer Bengaluru, best Android developer India, professional Android developer, experienced mobile developer, Android SDK developer, hire mobile developer, freelance Android developer, Android consultant, top rated Android engineer, best developer for Android, Ajay Chauhan, Clean Architecture Android, MVVM Android, EdTech Android developer, HealthTech Android developer, Telecom Android engineer, remote Android developer, Android developer portfolio">
+    <meta name="robots" content="index, follow">
 
-/* GRID */
-body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(160,120,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(160,120,255,.04) 1px,transparent 1px);background-size:72px 72px;pointer-events:none;z-index:0;}
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ajay Chauhan | Top Senior Android Engineer | Hire Mobile Developer">
+    <meta property="og:description"
+        content="Top-rated Senior Android Engineer — 8+ yrs, 10M+ users, Kotlin · Jetpack Compose · SDK · IAP. Available globally for hire.">
+    <meta property="og:image" content="https://ajaychauhan.dev/assets/images/og-preview.png">
+    <meta property="og:url" content="https://ajaychauhan.dev">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Ajay Chauhan | Android Engineer Portfolio">
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:18px 64px;background:rgba(7,5,15,.8);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);}
-.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:19px;background:linear-gradient(135deg,var(--purple-lt),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none;letter-spacing:-.5px;}
-.nav-links{display:flex;gap:32px;list-style:none;}
-.nav-links a{color:var(--text-muted);text-decoration:none;font-size:12px;letter-spacing:2px;text-transform:uppercase;transition:color .2s;position:relative;}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--purple),var(--pink));transform:scaleX(0);transition:transform .25s;}
-.nav-links a:hover{color:var(--purple-lt);}
-.nav-links a:hover::after{transform:scaleX(1);}
-.nav-cta{padding:9px 22px;border:1px solid var(--border2);color:var(--purple-lt);font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .25s;background:var(--purple-faint);}
-.nav-cta:hover{background:var(--purple-dim);border-color:var(--purple);box-shadow:0 0 24px var(--purple-glow);}
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ajay Chauhan | Top Android Engineer | Hire Mobile Developer">
+    <meta name="twitter:description"
+        content="Best-in-class Android engineer. 8+ yrs, 10M+ users. Kotlin, Jetpack Compose, SDK dev. Available to hire globally.">
+    <meta name="twitter:image" content="https://ajaychauhan.dev/assets/images/og-preview.png">
 
-/* HERO */
-#hero{min-height:100vh;display:flex;align-items:center;padding:140px 64px 100px;position:relative;overflow:hidden;}
-.hero-inner{position:relative;z-index:1;max-width:1000px;}
-.hero-badge{display:inline-flex;align-items:center;gap:10px;background:var(--purple-faint);border:1px solid var(--border2);padding:8px 18px;margin-bottom:32px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--purple-lt);opacity:0;animation:fadeUp .7s .2s forwards;}
-.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--purple);animation:blink 1.5s infinite;}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-.hero-h1{font-family:'Syne',sans-serif;font-size:clamp(52px,8.5vw,105px);font-weight:800;letter-spacing:-4px;line-height:.9;margin-bottom:16px;opacity:0;animation:fadeUp .8s .35s forwards;}
-.h1-line1{color:var(--text);}
-.h1-line2{background:linear-gradient(135deg,var(--purple-lt) 0%,var(--pink) 50%,var(--blue) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-style:italic;font-family:'Fraunces',serif;font-weight:300;background-size:200%;animation:gShift 4s ease infinite;}
-@keyframes gShift{0%,100%{background-position:0%}50%{background-position:100%}}
-.hero-sub{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(18px,2.5vw,26px);color:var(--text-muted);margin-bottom:28px;opacity:0;animation:fadeUp .8s .5s forwards;}
-.hero-desc{max-width:560px;color:var(--text-muted);font-size:15px;line-height:1.9;margin-bottom:52px;opacity:0;animation:fadeUp .8s .65s forwards;}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .8s forwards;}
-.btn-grad{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--purple-dk),var(--purple));color:#fff;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:14px 30px;text-decoration:none;transition:all .25s;font-family:'Plus Jakarta Sans',sans-serif;font-weight:500;position:relative;overflow:hidden;}
-.btn-grad::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--purple),var(--pink));opacity:0;transition:opacity .3s;}
-.btn-grad:hover::before{opacity:1;}
-.btn-grad:hover{transform:translateY(-2px);box-shadow:0 10px 40px var(--purple-glow);}
-.btn-grad span{position:relative;z-index:1;}
-.btn-ghost{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--border2);color:var(--text-muted);font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:14px 30px;text-decoration:none;transition:all .25s;font-family:'Plus Jakarta Sans',sans-serif;}
-.btn-ghost:hover{border-color:var(--purple);color:var(--purple-lt);transform:translateY(-2px);}
-.hero-stats{position:absolute;right:64px;bottom:80px;display:flex;gap:48px;opacity:0;animation:fadeUp .8s 1s forwards;}
-.stat{text-align:right;}
-.stat-n{font-family:'Syne',sans-serif;font-size:44px;font-weight:800;line-height:1;background:linear-gradient(135deg,var(--purple-lt),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.stat-l{font-size:10px;letter-spacing:2px;color:var(--text-dim);text-transform:uppercase;margin-top:4px;}
-.scroll-cue{position:absolute;bottom:40px;left:64px;display:flex;align-items:center;gap:12px;color:var(--text-dim);font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:0;animation:fadeUp .8s 1.2s forwards;}
-.scroll-track{width:44px;height:1px;background:var(--text-dim);overflow:hidden;position:relative;}
-.scroll-track::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--purple);animation:trackSlide 2s 1.5s infinite;}
-@keyframes trackSlide{0%{left:-100%}100%{left:100%}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ajaychauhan.dev/">
 
-/* MARQUEE */
-.marq-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:18px 0;background:var(--surface);position:relative;z-index:1;}
-.marq-track{display:flex;width:max-content;animation:marq 22s linear infinite;}
-.marq-track:hover{animation-play-state:paused;}
-.mq-item{display:flex;align-items:center;gap:20px;padding:0 28px;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-dim);white-space:nowrap;}
-.mq-dot{color:var(--purple);font-size:16px;}
-@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Scripts -->
+    <script src="assets/js/main.js" defer></script>
 
-/* SECTIONS */
-section{padding:120px 64px;position:relative;z-index:1;}
-.sec-tag{display:flex;align-items:center;gap:14px;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--purple-lt);margin-bottom:14px;}
-.sec-tag::before{content:attr(data-n);color:var(--text-dim);}
-.sec-tag::after{content:'';width:48px;height:1px;background:linear-gradient(90deg,var(--purple),transparent);}
-h2.sec-h{font-family:'Syne',sans-serif;font-size:clamp(34px,5vw,58px);font-weight:800;letter-spacing:-2px;line-height:1;margin-bottom:60px;}
-h2.sec-h em{font-style:italic;font-family:'Fraunces',serif;font-weight:300;background:linear-gradient(135deg,var(--purple-lt),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-
-/* ABOUT */
-#about{background:var(--bg2);}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-.about-p{color:var(--text-muted);font-size:15px;line-height:2;margin-bottom:20px;}
-.about-p strong{color:var(--text);}
-.about-visual{position:relative;display:flex;justify-content:center;}
-.av-frame{width:290px;height:290px;background:linear-gradient(135deg,var(--surface),var(--surface2));border:1px solid var(--border2);position:relative;display:flex;align-items:center;justify-content:center;}
-.av-frame::before{content:'';position:absolute;top:18px;left:18px;right:-18px;bottom:-18px;border:1px solid var(--border);z-index:-1;}
-.av-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--purple-dim),transparent);animation:shimmer 3.5s ease-in-out infinite;}
-@keyframes shimmer{0%,100%{opacity:1}50%{opacity:.4}}
-.av-initials{font-family:'Syne',sans-serif;font-size:76px;font-weight:800;background:linear-gradient(135deg,var(--purple-lt),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;z-index:1;}
-.av-tag{position:absolute;bottom:-18px;right:-18px;background:linear-gradient(135deg,var(--purple-dk),var(--purple));color:#fff;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:8px 14px;}
-.dpills{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
-.dpill{padding:6px 14px;border:1px solid var(--border2);background:var(--purple-faint);color:var(--purple-lt);font-size:11px;letter-spacing:1px;}
-
-/* SKILLS */
-#skills{background:var(--bg);}
-.sk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:2px;}
-.sk-card{background:var(--surface);padding:32px;border:1px solid transparent;transition:all .3s;position:relative;overflow:hidden;}
-.sk-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--purple),var(--pink));transform:scaleX(0);transition:transform .3s;}
-.sk-card:hover{border-color:var(--border);background:var(--surface2);}
-.sk-card:hover::before{transform:scaleX(1);}
-.sk-icon{font-size:26px;margin-bottom:14px;display:block;}
-.sk-name{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;}
-.sk-desc{font-size:12px;color:var(--text-dim);margin-bottom:14px;}
-.sk-tags{display:flex;flex-wrap:wrap;gap:6px;}
-.sk-tag{font-size:10px;letter-spacing:.5px;padding:3px 9px;border:1px solid var(--border);color:var(--text-dim);transition:all .2s;}
-.sk-card:hover .sk-tag{border-color:rgba(168,85,247,.25);color:var(--text-muted);}
-
-/* EXPERIENCE */
-#experience{background:var(--bg2);}
-.tl{position:relative;max-width:820px;}
-.tl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--purple),transparent 90%);}
-.tl-item{padding-left:52px;padding-bottom:56px;position:relative;opacity:0;transform:translateX(-18px);transition:all .55s;}
-.tl-item.vis{opacity:1;transform:translateX(0);}
-.tl-dot{position:absolute;left:-5px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--bg2);border:1.5px solid var(--purple);transition:all .3s;}
-.tl-item:hover .tl-dot{background:var(--purple);box-shadow:0 0 18px var(--purple-glow);}
-.tl-period{font-size:10px;letter-spacing:3px;color:var(--purple-lt);text-transform:uppercase;margin-bottom:6px;}
-.tl-role{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--text);margin-bottom:2px;}
-.tl-co{font-size:13px;color:var(--text-muted);margin-bottom:14px;}
-.tl-ul{list-style:none;margin-bottom:14px;}
-.tl-ul li{color:var(--text-dim);font-size:13px;padding:5px 0 5px 20px;position:relative;border-bottom:1px solid var(--border);}
-.tl-ul li::before{content:'→';position:absolute;left:0;color:var(--purple);font-size:11px;top:8px;}
-.tl-tech{display:flex;flex-wrap:wrap;gap:6px;}
-.tech{font-size:10px;letter-spacing:.5px;padding:3px 10px;background:var(--purple-faint);border:1px solid rgba(168,85,247,.2);color:var(--purple-lt);}
-
-/* APP SHOWCASE */
-#apps{background:var(--bg);overflow:hidden;}
-.app-tabs{display:flex;gap:2px;margin-bottom:48px;flex-wrap:wrap;}
-.app-tab{display:flex;align-items:center;gap:10px;padding:14px 22px;background:var(--surface);border:1px solid transparent;cursor:none;transition:all .25s;color:var(--text-muted);font-size:13px;}
-.app-tab:hover{border-color:var(--border);color:var(--text);}
-.app-tab.active{background:var(--surface2);border-color:var(--border2);color:var(--purple-lt);}
-.app-tab img{width:28px;height:28px;border-radius:6px;object-fit:cover;}
-.tab-name{font-weight:600;}
-.tab-role{font-size:10px;letter-spacing:1px;color:var(--text-dim);}
-.app-panel{display:none;}
-.app-panel.active{display:grid;grid-template-columns:1fr 1.5fr;gap:60px;align-items:start;}
-.ap-badge{display:inline-flex;align-items:center;gap:6px;background:var(--purple-faint);border:1px solid var(--border2);padding:5px 12px;margin-bottom:16px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--purple-lt);}
-.ap-name{font-family:'Syne',sans-serif;font-size:30px;font-weight:800;color:var(--text);margin-bottom:6px;}
-.ap-co{font-size:13px;color:var(--purple-lt);margin-bottom:20px;letter-spacing:1px;}
-.ap-desc{color:var(--text-muted);font-size:14px;line-height:1.95;margin-bottom:24px;}
-.ap-ul{list-style:none;margin-bottom:24px;}
-.ap-ul li{color:var(--text-muted);font-size:13px;padding:6px 0 6px 20px;position:relative;border-bottom:1px solid var(--border);}
-.ap-ul li::before{content:'✦';position:absolute;left:0;color:var(--purple);font-size:9px;top:10px;}
-.ap-link{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--purple-dk),var(--purple));color:#fff;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:12px 22px;text-decoration:none;transition:all .25s;}
-.ap-link:hover{transform:translateY(-2px);box-shadow:0 8px 28px var(--purple-glow);}
-.ap-tech{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;}
-
-/* SLIDER */
-.ap-slider{position:relative;}
-.sl-vp{overflow-x:auto;display:flex;gap:12px;padding-bottom:16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--purple) var(--surface);}
-.sl-vp::-webkit-scrollbar{height:3px;}
-.sl-vp::-webkit-scrollbar-track{background:var(--surface);}
-.sl-vp::-webkit-scrollbar-thumb{background:var(--purple);border-radius:4px;}
-.sl-img{flex:0 0 auto;width:175px;height:310px;border-radius:16px;object-fit:cover;border:1px solid var(--border2);scroll-snap-align:start;transition:transform .3s,box-shadow .3s;}
-.sl-img:hover{transform:scale(1.04) translateY(-4px);box-shadow:0 16px 40px rgba(168,85,247,.3);}
-.sl-nav{display:flex;gap:8px;margin-top:16px;}
-.sl-btn{width:36px;height:36px;border:1px solid var(--border2);background:var(--surface);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:16px;cursor:none;transition:all .2s;}
-.sl-btn:hover{border-color:var(--purple);color:var(--purple);}
-
-/* CONTACT */
-#contact{background:var(--bg2);}
-.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-.ct-desc{color:var(--text-muted);font-size:16px;line-height:2;margin-bottom:40px;}
-.ct-links{display:flex;flex-direction:column;gap:2px;}
-.ct-link{display:flex;align-items:center;justify-content:space-between;padding:20px 28px;background:var(--surface);border:1px solid transparent;text-decoration:none;transition:all .25s;}
-.ct-link:hover{border-color:var(--border2);transform:translateX(8px);}
-.ct-link:hover .ct-arr{color:var(--purple);transform:translateX(4px);}
-.ct-label{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:var(--text);}
-.ct-val{font-size:12px;color:var(--text-muted);margin-top:2px;}
-.ct-arr{color:var(--text-dim);font-size:20px;transition:all .2s;}
-.ct-form{display:flex;flex-direction:column;gap:12px;}
-.ct-input{background:var(--surface);border:1px solid var(--border);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;padding:14px 18px;outline:none;transition:border-color .2s;width:100%;}
-.ct-input:focus{border-color:var(--purple);}
-.ct-input::placeholder{color:var(--text-dim);}
-textarea.ct-input{min-height:120px;resize:vertical;}
-.ct-submit{background:linear-gradient(135deg,var(--purple-dk),var(--purple));color:#fff;border:none;padding:14px 28px;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:none;transition:all .25s;text-align:left;}
-.ct-submit:hover{transform:translateY(-2px);box-shadow:0 8px 28px var(--purple-glow);}
-
-/* FOOTER */
-footer{padding:40px 64px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1;background:var(--bg2);}
-.footer-l{font-size:12px;color:var(--text-dim);}
-.footer-r{display:flex;gap:12px;}
-.fsoc{width:38px;height:38px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--text-dim);font-size:13px;font-family:'Syne',sans-serif;font-weight:700;transition:all .2s;}
-.fsoc:hover{border-color:var(--purple);color:var(--purple);transform:translateY(-3px);}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(36px);transition:opacity .7s,transform .7s;}
-.reveal.vis{opacity:1;transform:translateY(0);}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  nav{padding:14px 24px;}
-  .nav-links{display:none;}
-  #hero,section{padding:80px 24px;}
-  .hero-stats{position:static;margin-top:48px;gap:28px;}
-  .about-grid,.app-panel.active,.ct-grid{grid-template-columns:1fr;gap:40px;}
-  .about-visual{order:-1;}
-  footer{padding:24px;flex-direction:column;gap:16px;text-align:center;}
-  .scroll-cue{display:none;}
-}
-</style>
+    <!-- ═══ Structured Data (JSON-LD) ═══ -->
+    <!-- Tells Google/Bing WHO this page is about — enables rich results globally -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ajay Chauhan",
+      "url": "https://ajaychauhan.dev",
+      "image": "https://ajaychauhan.dev/assets/images/og-preview.png",
+      "jobTitle": "Senior Android Engineer",
+      "description": "Senior Android Engineer with 8+ years of experience architecting scalable mobile platforms for 10M+ users across Telecom, EdTech, and HealthTech.",
+      "email": "official.achauhan@gmail.com",
+      "sameAs": [
+        "https://linkedin.com/in/mobiledevajay",
+        "https://github.com/meajay"
+      ],
+      "knowsAbout": [
+        "Android Development", "Kotlin", "Jetpack Compose", "Clean Architecture",
+        "MVVM", "MVI", "Hilt", "Coroutines", "Kotlin Flow", "In-App Purchases",
+        "RevenueCat", "SDK Development", "Mobile Architecture", "CI/CD",
+        "Performance Optimization", "Server-Driven UI", "A/B Testing"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Circles.life"
+      },
+      "alumniOf": [
+        { "@type": "Organization", "name": "BYJU's / Epic!" },
+        { "@type": "Organization", "name": "MediBuddy" }
+      ]
+    }
+    </script>
 </head>
+
 <body>
+    <div class="orb"></div>
+    <nav>
+        <a href="#" onclick="window.scrollTo(0,0); window.location.href = window.location.pathname; return false;"
+            class="logo">AC<span style="color:var(--violet)">.dev</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#apps">Work</a></li>
+        </ul>
+        <div class="nav-icons">
+            <a href="https://github.com/meajay" target="_blank" rel="noopener noreferrer" class="nav-icon"
+                aria-label="GitHub">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+            </a>
+            <a href="https://linkedin.com/in/mobiledevajay" target="_blank" rel="noopener noreferrer" class="nav-icon"
+                aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+            </a>
+            <a href="mailto:official.achauhan@gmail.com" class="nav-icon" aria-label="Email">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 12.713l11.985-8.71C23.593 2.148 21.848 1 19.8 1H4.2C2.145 1 .403 2.152.015 4.004L12 12.713zM0 6.643v11.15C0 19.897 1.813 21 4.2 21h15.6c2.387 0 4.2-1.103 4.2-3.207V6.643L12 15.356 0 6.643z" />
+                </svg>
+            </a>
+        </div>
+    </nav>
 
-<div class="orb orb1"></div>
-<div class="orb orb2"></div>
-<div class="orb orb3"></div>
-<div id="cur"></div>
-<div id="cur-ring"></div>
+    <section id="hero">
+        <h1 class="hero-h1 fade-in">Ajay Chauhan.<br><span style="color:var(--text-muted)">Android Engineer.</span></h1>
+        <p class="hero-desc fade-in">Architecting and scaling robust Android platforms for over <b>10M+ users</b>. Over
+            the last 8+ years, I've engineered solutions across Telecom, EdTech, and HealthTech sectors, turning
+            ambitious concepts into flawless applications.</p>
+        <div class="hero-btns fade-in">
+            <a href="#apps" class="btn-primary">View My Work</a>
+            <a href="#experience" class="btn-secondary">Experience</a>
+        </div>
+    </section>
 
-<!-- NAV -->
-<nav>
-  <a href="#hero" class="logo">AC<span style="background:none;-webkit-text-fill-color:var(--text-dim)">.</span>dev</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#apps">Apps</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a href="mailto:official.achauhan@gmail.com" class="nav-cta">Hire Me</a>
-</nav>
+    <section id="about">
+        <div class="sec-tag fade-in">About Me</div>
+        <h2 class="sec-h fade-in">Building the invisible.</h2>
+        <div class="grid">
+            <div class="card fade-in">
+                <div class="card-h">Platform Engineering</div>
+                <div class="card-desc">My specialty lies in SDK development, monetization systems, and platform-scale
+                    performance. I believe great engineering shouldn't be noticed—it just feels fast, fluid, and
+                    remarkably reliable.</div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-h">Impact & Scale</div>
+                <div class="card-desc">From driving million-dollar IAP revenue flows to reducing app crashes down to
+                    0.01% while serving 50k+ DAU. I build the infrastructure that product teams rely on to grow
+                    confidently.</div>
+            </div>
+        </div>
+    </section>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-inner">
-    <div class="hero-badge"><div class="badge-dot"></div>Open to Senior Android Roles &middot; Bengaluru</div>
-    <h1 class="hero-h1">
-      <span class="h1-line1">Ajay Chauhan</span><br>
-      <span class="h1-line2">Android Engineer</span>
-    </h1>
-    <p class="hero-sub">8+ Years &middot; Telecom &middot; EdTech &middot; HealthTech</p>
-    <p class="hero-desc">Architecting and scaling Android platforms for <strong style="color:var(--text)">10M+ users</strong> — from SDK development and monetization systems to performance optimization and Jetpack Compose migration. I build products people rely on.</p>
-    <div class="hero-btns">
-      <a href="#apps" class="btn-grad"><span>View My Apps &rarr;</span></a>
-      <a href="#experience" class="btn-ghost">See Experience</a>
-    </div>
-  </div>
-  <div class="hero-stats">
-    <div class="stat"><div class="stat-n">8+</div><div class="stat-l">Years Exp</div></div>
-    <div class="stat"><div class="stat-n">10M+</div><div class="stat-l">Users Served</div></div>
-    <div class="stat"><div class="stat-n">5</div><div class="stat-l">Companies</div></div>
-  </div>
-  <div class="scroll-cue"><div class="scroll-track"></div>Scroll</div>
-</section>
+    <section id="skills">
+        <div class="sec-tag fade-in">Technical Skills</div>
+        <h2 class="sec-h fade-in">My toolkit.</h2>
+        <div class="grid">
+            <div class="card fade-in">
+                <div class="card-h">Core Android & UI</div>
+                <div class="card-desc">Deep platform expertise in developing fluid and scalable user interfaces.</div>
+                <div class="tags"><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span
+                        class="tag">Material Design</span></div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-h">Architecture</div>
+                <div class="card-desc">Scalable system patterns built for longevity and testing.</div>
+                <div class="tags"><span class="tag">Clean Architecture</span><span class="tag">MVVM/MVI</span><span
+                        class="tag">Hilt / Dependency Injection</span></div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-h">Monetization</div>
+                <div class="card-desc">Revenue-driving engineering utilizing server mechanisms.</div>
+                <div class="tags"><span class="tag">IAP / RevenueCat</span><span class="tag">3DS API</span><span
+                        class="tag">Server-Driven UI</span><span class="tag">A/B Testing</span></div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-h">Performance & Data</div>
+                <div class="card-desc">Efficient async data flow and performance stabilization.</div>
+                <div class="tags"><span class="tag">Coroutines/Flow</span><span class="tag">CI/CD Automation</span><span
+                        class="tag">CPU Profiling</span></div>
+            </div>
+        </div>
+    </section>
 
-<!-- MARQUEE -->
-<div class="marq-wrap">
-  <div class="marq-track">
-    <div class="mq-item">Kotlin<span class="mq-dot">✦</span></div><div class="mq-item">Jetpack Compose<span class="mq-dot">✦</span></div><div class="mq-item">MVVM / MVI<span class="mq-dot">✦</span></div><div class="mq-item">SDK Development<span class="mq-dot">✦</span></div><div class="mq-item">Coroutines &amp; Flow<span class="mq-dot">✦</span></div><div class="mq-item">Clean Architecture<span class="mq-dot">✦</span></div><div class="mq-item">In-App Purchases<span class="mq-dot">✦</span></div><div class="mq-item">Firebase<span class="mq-dot">✦</span></div><div class="mq-item">A/B Testing<span class="mq-dot">✦</span></div><div class="mq-item">Performance Profiling<span class="mq-dot">✦</span></div><div class="mq-item">Hilt / Dagger<span class="mq-dot">✦</span></div><div class="mq-item">Retrofit<span class="mq-dot">✦</span></div><div class="mq-item">Room DB<span class="mq-dot">✦</span></div>
-    <div class="mq-item">Kotlin<span class="mq-dot">✦</span></div><div class="mq-item">Jetpack Compose<span class="mq-dot">✦</span></div><div class="mq-item">MVVM / MVI<span class="mq-dot">✦</span></div><div class="mq-item">SDK Development<span class="mq-dot">✦</span></div><div class="mq-item">Coroutines &amp; Flow<span class="mq-dot">✦</span></div><div class="mq-item">Clean Architecture<span class="mq-dot">✦</span></div><div class="mq-item">In-App Purchases<span class="mq-dot">✦</span></div><div class="mq-item">Firebase<span class="mq-dot">✦</span></div><div class="mq-item">A/B Testing<span class="mq-dot">✦</span></div><div class="mq-item">Performance Profiling<span class="mq-dot">✦</span></div><div class="mq-item">Hilt / Dagger<span class="mq-dot">✦</span></div><div class="mq-item">Retrofit<span class="mq-dot">✦</span></div><div class="mq-item">Room DB<span class="mq-dot">✦</span></div>
-  </div>
-</div>
+    <section id="experience">
+        <div class="sec-tag fade-in">Work Experience</div>
+        <h2 class="sec-h fade-in">Where I've engineered.</h2>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="sec-tag" data-n="01">About Me</div>
-  <h2 class="sec-h">The engineer<br>behind the <em>code</em></h2>
-  <div class="about-grid">
-    <div class="reveal">
-      <p class="about-p">I'm <strong>Ajay Chauhan</strong>, a Senior Android Engineer based in Bengaluru with <strong>8+ years</strong> of experience building and scaling Android applications that reach millions of users across Telecom, EdTech, and HealthTech domains.</p>
-      <p class="about-p">My speciality lies in <strong>SDK development</strong>, <strong>monetization systems</strong>, and <strong>platform-scale performance</strong>. I've led Java-to-Kotlin migrations, architected reusable SDKs, built backend-driven pricing engines, and driven measurable business outcomes through clean engineering.</p>
-      <p class="about-p">I believe great Android engineering is invisible — it just feels fast, fluid, and reliable. That's the standard I hold myself to, every sprint.</p>
-      <div class="dpills">
-        <span class="dpill">Telecom</span><span class="dpill">EdTech</span><span class="dpill">HealthTech</span><span class="dpill">SDK Dev</span><span class="dpill">Monetization</span>
-      </div>
-    </div>
-    <div class="about-visual reveal">
-      <div class="av-frame">
-        <div class="av-initials">AC</div>
-        <div class="av-tag">Senior Android Engineer</div>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="exp-item fade-in">
+            <div class="exp-role">Senior Android Engineer</div>
+            <div class="exp-meta">Circles.life · Bengaluru · Nov 2024 - Present</div>
+            <ul class="exp-ul">
+                <li>Led Java → Kotlin migration of ~50% of the telecom self-care codebase.</li>
+                <li>Engineered end-to-end monetization for mobile plans, featuring multi-subscription add-ons via 3DS
+                    payments.</li>
+                <li>Resolved critical UI stutters, cutting frame drops by 30% via specialized CPU profiling.</li>
+            </ul>
+        </div>
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="sec-tag" data-n="02">Technical Skills</div>
-  <h2 class="sec-h">My engineering<br><em>toolkit</em></h2>
-  <div class="sk-grid">
-    <div class="sk-card reveal"><span class="sk-icon">📱</span><div class="sk-name">Core Android & Platform</div><div class="sk-desc">Deep platform expertise</div><div class="sk-tags"><span class="sk-tag">Kotlin</span><span class="sk-tag">Java</span><span class="sk-tag">Android SDK</span><span class="sk-tag">Jetpack Compose</span><span class="sk-tag">Lifecycle Components</span><span class="sk-tag">Material Design</span></div></div>
-    <div class="sk-card reveal"><span class="sk-icon">🏗️</span><div class="sk-name">Architecture & Design</div><div class="sk-desc">Scalable system patterns</div><div class="sk-tags"><span class="sk-tag">MVVM</span><span class="sk-tag">MVI</span><span class="sk-tag">Clean Architecture</span><span class="sk-tag">Modularization</span><span class="sk-tag">SDK Development</span><span class="sk-tag">Hilt / Dagger</span></div></div>
-    <div class="sk-card reveal"><span class="sk-icon">💰</span><div class="sk-name">Monetization & Experiments</div><div class="sk-desc">Revenue-driving engineering</div><div class="sk-tags"><span class="sk-tag">Google Play IAP</span><span class="sk-tag">Feature Flags</span><span class="sk-tag">Remote Config</span><span class="sk-tag">A/B Testing</span><span class="sk-tag">Server-Driven UI</span><span class="sk-tag">3DS Payments</span></div></div>
-    <div class="sk-card reveal"><span class="sk-icon">⚡</span><div class="sk-name">Data & Networking</div><div class="sk-desc">Efficient async data flow</div><div class="sk-tags"><span class="sk-tag">Coroutines</span><span class="sk-tag">Flow API</span><span class="sk-tag">Retrofit</span><span class="sk-tag">GraphQL</span><span class="sk-tag">WebSockets</span><span class="sk-tag">RxJava</span><span class="sk-tag">Room</span></div></div>
-    <div class="sk-card reveal"><span class="sk-icon">🔬</span><div class="sk-name">Performance & DevOps</div><div class="sk-desc">Ship fast, stay stable</div><div class="sk-tags"><span class="sk-tag">CPU/GPU Profiling</span><span class="sk-tag">ANR & Crash Analysis</span><span class="sk-tag">ProGuard / R8</span><span class="sk-tag">JUnit & Espresso</span><span class="sk-tag">Jenkins</span><span class="sk-tag">Bitrise</span></div></div>
-    <div class="sk-card reveal"><span class="sk-icon">🔥</span><div class="sk-name">Firebase & Backend</div><div class="sk-desc">Cloud-powered features</div><div class="sk-tags"><span class="sk-tag">Firestore</span><span class="sk-tag">Auth</span><span class="sk-tag">FCM</span><span class="sk-tag">Crashlytics</span><span class="sk-tag">Remote Config</span><span class="sk-tag">Analytics</span></div></div>
-  </div>
-</section>
+        <div class="exp-item fade-in">
+            <div class="exp-role">Senior Android Engineer</div>
+            <div class="exp-meta">BYJU's / Epic! · Bengaluru · Jan 2022 - May 2024</div>
+            <ul class="exp-ul">
+                <li>Rolled out a powerful doubt-resolution SDK that increased global daily student queries by 40%.</li>
+                <li>Implemented backend-driven pricing via precise feature flagging, lifting annual subscription
+                    revenues by 12%.</li>
+                <li>Coordinated monetization localization frameworks across US, UK, and India markets.</li>
+            </ul>
+        </div>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="sec-tag" data-n="03">Work Experience</div>
-  <h2 class="sec-h">Where I've<br><em>engineered</em></h2>
-  <div class="tl">
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-period">Nov 2024 &ndash; Present</div>
-      <div class="tl-role">Senior Android Engineer</div>
-      <div class="tl-co">Circles.life &middot; Bengaluru</div>
-      <ul class="tl-ul">
-        <li>Migrating ~50% of Android codebase from Java to Kotlin, improving maintainability and establishing modern coding standards</li>
-        <li>Leading end-to-end monetization for mobile plans — multi-subscription, add-on &amp; top-up purchases with 3DS-enabled payments and robust failure handling</li>
-        <li>Resolved home screen performance issues via CPU/GPU profiling, cutting frame drops by 30% and improving interaction time by 1.5s</li>
-      </ul>
-      <div class="tl-tech"><span class="tech">Kotlin</span><span class="tech">Compose</span><span class="tech">IAP</span><span class="tech">3DS Payments</span><span class="tech">Profiling</span></div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-period">Jan 2022 &ndash; May 2024</div>
-      <div class="tl-role">Senior Android Engineer</div>
-      <div class="tl-co">BYJU's &middot; Bengaluru</div>
-      <ul class="tl-ul">
-        <li>Owned and led rollout of a reusable doubt-resolution SDK from Toppr, scaled across multiple apps — increasing daily queries by 40%</li>
-        <li>Implemented backend-driven pricing via feature flags &amp; A/B testing, increasing annual subscriptions by 12%</li>
-        <li>Built Next in Series and Book Recommendation System, driving 8% increase in book completion rates</li>
-        <li>Coordinated monetization rollouts across US, UK, and India markets with Product, Backend, and QA</li>
-      </ul>
-      <div class="tl-tech"><span class="tech">SDK Dev</span><span class="tech">A/B Testing</span><span class="tech">Feature Flags</span><span class="tech">Kotlin</span><span class="tech">Hilt</span></div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-period">Feb 2019 &ndash; Jan 2022</div>
-      <div class="tl-role">SDE-3 (Android)</div>
-      <div class="tl-co">MediBuddy &middot; Bengaluru</div>
-      <ul class="tl-ul">
-        <li>Led team of 3 engineers through major rebranding initiative, revamping 50+ screens on deadline</li>
-        <li>Re-architected search using Apache Lucene — reduced per-consultation search latency by 90 seconds</li>
-        <li>Dynamic pricing via Firebase Remote Config drove 15% higher renewal rates</li>
-        <li>Maintained 99.9% crash-free users while scaling from 3.5k to 8k daily consultations during COVID</li>
-      </ul>
-      <div class="tl-tech"><span class="tech">Apache Lucene</span><span class="tech">Firebase</span><span class="tech">Kotlin</span><span class="tech">MVVM</span></div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-period">Mar 2018 &ndash; Feb 2019</div>
-      <div class="tl-role">Android Developer</div>
-      <div class="tl-co">Nspira Management &middot; Bengaluru</div>
-      <ul class="tl-ul">
-        <li>Built and launched NConnect (Parents) &amp; NStaff (Teachers) apps from scratch — 50k+ downloads in 4 months</li>
-        <li>Built WebSocket-based real-time chat SDK for parent-teacher-admin communication</li>
-      </ul>
-      <div class="tl-tech"><span class="tech">WebSockets</span><span class="tech">Chat SDK</span><span class="tech">Android</span></div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-period">Feb 2017 &ndash; Jan 2018</div>
-      <div class="tl-role">Android Developer</div>
-      <div class="tl-co">Zoyride &middot; Bengaluru</div>
-      <ul class="tl-ul">
-        <li>Delivered cab ride pooling and bike support features for the ride-sharing platform</li>
-        <li>Automated CI/CD pipelines for internal app distribution, reducing release time by ~50%</li>
-      </ul>
-      <div class="tl-tech"><span class="tech">CI/CD</span><span class="tech">Maps SDK</span><span class="tech">Android</span></div>
-    </div>
-  </div>
-</section>
+        <div class="exp-item fade-in">
+            <div class="exp-role">SDE-3 Android</div>
+            <div class="exp-meta">MediBuddy · Bengaluru · Feb 2019 - Jan 2022</div>
+            <ul class="exp-ul">
+                <li>Re-architected local search via Apache Lucene, drastically reducing consultation latency.</li>
+                <li>Managed a 99.9% crash-free rate scale while handling a rapid spike from 3.5k to 8k daily engagements
+                    during COVID operations.</li>
+            </ul>
+        </div>
 
-<!-- APP SHOWCASE -->
-<section id="apps">
-  <div class="sec-tag" data-n="04">App Showcase</div>
-  <h2 class="sec-h">Apps I've<br><em>shipped</em></h2>
+        <div class="exp-item fade-in">
+            <div class="exp-role">Android Developer</div>
+            <div class="exp-meta">NSpira Management · Bengaluru · Mar 2018 - Feb 2019</div>
+            <ul class="exp-ul">
+                <li>Built and launched NConnect apps from scratch, achieving 50k+ downloads within 4 months.</li>
+                <li>Engineered a WebSocket-based real-time chat SDK facilitating direct parent-teacher-admin
+                    architectural communication flows.</li>
+            </ul>
+        </div>
 
-  <div class="app-tabs">
-    <div class="app-tab active" onclick="switchApp(0)">
-      <img src="https://img.utdstc.com/icon/2bf/81e/2bf81e6316369911cedd9d91b2aada82152cf2aaa5b743ce238476646ea12485" alt="" onerror="this.style.display='none'">
-      <div><div class="tab-name">Circles.life</div><div class="tab-role">Telecom &middot; Current</div></div>
-    </div>
-    <div class="app-tab" onclick="switchApp(1)">
-      <img src="https://img.utdstc.com/icon/abc/a2f/abca2fe507f9a0c9b6a9f4b76d7f4b33fc1515ca957371980533af1675c0b169" alt="" onerror="this.style.display='none'">
-      <div><div class="tab-name">BYJU's / Epic!</div><div class="tab-role">EdTech &middot; 2022&ndash;2024</div></div>
-    </div>
-    <div class="app-tab" onclick="switchApp(2)">
-      <img src="https://img.utdstc.com/icon/fab/ac8/fabac81d54339e6670f5c907262e50f8ad72e4af7af0e34e8b952c2bf54ec0be" alt="" onerror="this.style.display='none'">
-      <div><div class="tab-name">MediBuddy</div><div class="tab-role">HealthTech &middot; 2019&ndash;2022</div></div>
-    </div>
-    <div class="app-tab" onclick="switchApp(3)">
-      <img src="https://img.utdstc.com/icon/618/f45/618f454dd877112e723d07a8a917f5ffaec3975c44e54ba63b400" alt="" onerror="this.style.display='none'">
-      <div><div class="tab-name">nConnect</div><div class="tab-role">EdTech &middot; 2018&ndash;2019</div></div>
-    </div>
-  </div>
+        <div class="exp-item fade-in">
+            <div class="exp-role">Android Developer</div>
+            <div class="exp-meta">Zoyride · Bengaluru · Feb 2017 - Jan 2018</div>
+            <ul class="exp-ul">
+                <li>Delivered core cab ride pooling and bike support functionalities utilizing Maps SDK.</li>
+                <li>Automated CI/CD infrastructure deployments ensuring rapid release cycles reducing wait time by 50%.
+                </li>
+            </ul>
+        </div>
+    </section>
 
-  <!-- Panel 0 -->
-  <div class="app-panel active" id="ap0">
-    <div>
-      <div class="ap-badge">📱 Telecom</div>
-      <div class="ap-name">Circles.life</div>
-      <div class="ap-co">circles.life &middot; Senior Android Engineer &middot; Nov 2024 &ndash; Present</div>
-      <p class="ap-desc">A full-featured telecom self-care app for plan management, rewards, bill payments, and entertainment. Serving users across Singapore and Southeast Asia.</p>
-      <ul class="ap-ul">
-        <li>Led Java &rarr; Kotlin migration of ~50% of codebase</li>
-        <li>Multi-subscription plans, add-ons &amp; top-ups with 3DS-enabled payments</li>
-        <li>30% fewer frame drops, 1.5s faster interaction via CPU/GPU profiling</li>
-        <li>Robust payment failure handling with retry and recovery flows</li>
-      </ul>
-      <div class="ap-tech"><span class="tech">Kotlin</span><span class="tech">Compose</span><span class="tech">IAP</span><span class="tech">3DS</span><span class="tech">Profiling</span></div>
-      <br><br>
-      <a href="https://play.google.com/store/apps/details?id=com.circles.selfcare" target="_blank" class="ap-link">View on Play Store &rarr;</a>
+    <section id="apps">
+        <div class="sec-tag fade-in">App Showcase</div>
+        <h2 class="sec-h fade-in">Engineered at Scale.</h2>
+
+        <!-- povo Ambient Trigger data-bg="rgba(251,192,45,0.15)" container -->
+        <div class="app-card fade-in" data-bg="rgba(251,192,45,0.15)" data-body-bg="#261e03"
+            data-url="https://play.google.com/store/apps/details?id=com.kddi.kdla.jp">
+            <div class="app-info">
+                <img src="assets/images/apps/com.kddi.kdla.jp_icon.png" alt="povo App icon" class="app-icon"
+                    onerror="this.style.display='none'">
+                <div class="app-name">povo 2.0</div>
+                <div class="app-meta" style="margin-bottom:12px;">KDDI Telecom Application</div>
+                <div class="app-stats">
+                    <div class="stat">
+                        <svg viewBox="0 0 24 24" fill="#f59e0b">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <span class="stat-val">4.2</span><span class="stat-lbl">Rating</span>
+                    </div>
+                    <div class="stat">
+                        <svg viewBox="0 0 24 24" fill="#60a5fa">
+                            <path d="M12 16l-6-6h4V4h4v6h4l-6 6zm-7 2h14v2H5v-2z" />
+                        </svg>
+                        <span class="stat-val">1M+</span><span class="stat-lbl">Downloads</span>
+                    </div>
+                    <div class="stat">
+                        <svg viewBox="0 0 24 24" fill="#a78bfa">
+                            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+                        </svg>
+                        <span class="stat-val">14K+</span><span class="stat-lbl">Reviews</span>
+                    </div>
+                </div>
+                <p class="app-desc">Japanese telecom service app allowing users to flexibly purchase data, talk, and
+                    various service "toppings" over a zero-yen base plan.</p>
+                <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.kddi.kdla.jp"
+                    target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M3.18 23.76c.35.2.76.21 1.12.04l12.44-7.18-2.7-2.7-10.86 9.84zM.54 1.07C.2 1.42 0 1.97 0 2.69v18.63c0 .72.2 1.27.55 1.61l.08.07 10.44-10.44v-.23L.62 1.0l-.08.07zM20.37 10.27l-2.77-1.6-3.03 3.03 3.03 3.03 2.79-1.61c.8-.46.8-1.21-.02-1.85zM4.3.24L16.74 7.42l-2.7 2.7L4.3.24z" />
+                    </svg>
+                    Google Play
+                </a>
+            </div>
+            <div class="app-screens-wrapper fade-in">
+                <div class="app-screens">
+                    <img src="assets/images/apps/com.kddi.kdla.jp_screen_0.png" alt="povo screen" class="app-screen"
+                        onerror="this.style.display='none'">
+                    <img src="assets/images/apps/com.kddi.kdla.jp_screen_1.png" alt="povo screen" class="app-screen"
+                        onerror="this.style.display='none'">
+                    <img src="assets/images/apps/com.kddi.kdla.jp_screen_2.png" alt="povo screen" class="app-screen"
+                        onerror="this.style.display='none'">
+                    <img src="assets/images/apps/com.kddi.kdla.jp_screen_3.png" alt="povo screen" class="app-screen"
+                        onerror="this.style.display='none'">
+                </div>
+            </div>
+        </div>
+
+        <!-- Epic! Ambient Trigger data-bg="rgba(3,169,244,0.15)" container -->
+        <div class="app-card fade-in" data-bg="rgba(11,180,250,0.15)" data-body-bg="#052840"
+            data-url="https://play.google.com/store/apps/details?id=com.getepic.Epic">
+            <div class="app-info">
+                <img src="assets/images/apps/com.getepic.Epic_icon.png" alt="Epic! App icon" class="app-icon"
+                    onerror="this.style.display='none'">
+                <div class="app-name">Epic! Kids Books</div>
+                <div class="app-meta" style="margin-bottom:12px;">Digital Library & Platform</div>
+                <div class="app-stats">
+                    <div class="stat">
+                        <svg viewBox="0 0 24 24" fill="#f59e0b">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <span class="stat-val">4.5</span><span class="stat-lbl">Rating</span>
+                    </div>
+                    <div class="stat">
+                        <svg viewBox="0 0 24 24" fill="#60a5fa">
+                            <path d="M12 16l-6-6h4V4h4v6h4l-6 6zm-7 2h14v2H5v-2z" />
+                        </svg>
+                        <span class="stat-val">10M+</span><span class="stat-lbl">Downloads</span>
+                    </div>
+                    <div class="stat">
+                        <svg viewBox="0 0 24 24" fill="#a78bfa">
+                            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+                        </svg>
+                        <span class="stat-val">324K+</span><span class="stat-lbl">Reviews</span>
+                    </div>
+                </div>
+                <p class="app-desc">A sophisticated digital library platform bridging educational video content with
+                    immersive reading experiences.</p>
+                <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.getepic.Epic"
+                    target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M3.18 23.76c.35.2.76.21 1.12.04l12.44-7.18-2.7-2.7-10.86 9.84zM.54 1.07C.2 1.42 0 1.97 0 2.69v18.63c0 .72.2 1.27.55 1.61l.08.07 10.44-10.44v-.23L.62 1.0l-.08.07zM20.37 10.27l-2.77-1.6-3.03 3.03 3.03 3.03 2.79-1.61c.8-.46.8-1.21-.02-1.85zM4.3.24L16.74 7.42l-2.7 2.7L4.3.24z" />
+                    </svg>
+                    Google Play
+                </a>
+            </div>
+            <div class="app-screens-wrapper fade-in">
+                <div class="app-screens">
+                    <img src="assets/images/apps/com.getepic.Epic_screen_0.png" alt="Epic screen" class="app-screen"
+                        onerror="this.style.display='none'">
+                    <img src="assets/images/apps/com.getepic.Epic_screen_1.png" alt="Epic screen" class="app-screen"
+                        onerror="this.style.display='none'">
+                    <img src="assets/images/apps/com.getepic.Epic_screen_2.png" alt="Epic screen" class="app-screen"
+                        onerror="this.style.display='none'">
+                </div>
+            </div>
+        </div>
+
+        <!-- MediBuddy Ambient Trigger data-bg="rgba(38,166,154,0.15)" container -->
+        <div class="app-card fade-in" data-bg="rgba(38,136,254,0.15)" data-body-bg="#072044"
+            data-url="https://play.google.com/store/apps/details?id=in.medibuddy">
+            <div class="app-info">
+                <img src="assets/images/apps/in.medibuddy_icon.png" alt="MediBuddy App icon" class="app-icon"
+                    onerror="this.style.display='none'">
+                <div class="app-name">MediBuddy</div>
+                <div class="app-meta" style="margin-bottom:12px;">Premier Health Platform</div>
+                <div class="app-stats">
+                    <div class="stat">
+                        <svg viewBox="0 0 24 24" fill="#f59e0b">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <span class="stat-val">4.4</span><span class="stat-lbl">Rating</span>
+                    </div>
+                    <div class="stat">
+                        <svg viewBox="0 0 24 24" fill="#60a5fa">
+                            <path d="M12 16l-6-6h4V4h4v6h4l-6 6zm-7 2h14v2H5v-2z" />
+                        </svg>
+                        <span class="stat-val">10M+</span><span class="stat-lbl">Downloads</span>
+                    </div>
+                    <div class="stat">
+                        <svg viewBox="0 0 24 24" fill="#a78bfa">
+                            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+                        </svg>
+                        <span class="stat-val">420K+</span><span class="stat-lbl">Reviews</span>
+                    </div>
+                </div>
+                <p class="app-desc">India's leading digital healthcare hub allowing dynamic consultations, lab booking
+                    flows, and intricate cashless mechanics.</p>
+                <a class="play-badge" href="https://play.google.com/store/apps/details?id=in.medibuddy" target="_blank"
+                    rel="noopener noreferrer" onclick="event.stopPropagation()">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M3.18 23.76c.35.2.76.21 1.12.04l12.44-7.18-2.7-2.7-10.86 9.84zM.54 1.07C.2 1.42 0 1.97 0 2.69v18.63c0 .72.2 1.27.55 1.61l.08.07 10.44-10.44v-.23L.62 1.0l-.08.07zM20.37 10.27l-2.77-1.6-3.03 3.03 3.03 3.03 2.79-1.61c.8-.46.8-1.21-.02-1.85zM4.3.24L16.74 7.42l-2.7 2.7L4.3.24z" />
+                    </svg>
+                    Google Play
+                </a>
+            </div>
+            <div class="app-screens-wrapper fade-in">
+                <div class="app-screens">
+                    <img src="assets/images/apps/in.medibuddy_screen_0.png" alt="MediBuddy screen" class="app-screen"
+                        onerror="this.style.display='none'">
+                    <img src="assets/images/apps/in.medibuddy_screen_1.png" alt="MediBuddy screen" class="app-screen"
+                        onerror="this.style.display='none'">
+                    <img src="assets/images/apps/in.medibuddy_screen_2.png" alt="MediBuddy screen" class="app-screen"
+                        onerror="this.style.display='none'">
+                </div>
+            </div>
+        </div>
+
+        <!-- NConnect Ambient Trigger data-bg="rgba(239,83,80,0.15)" container -->
+        <div class="app-card fade-in" data-bg="rgba(60,200,90,0.15)" data-body-bg="#0a2916"
+            data-url="https://play.google.com/store/apps/details?id=com.nspira.nconnect">
+            <div class="app-info">
+                <img src="assets/images/apps/com.nspira.nconnect_icon.png" alt="NConnect App icon" class="app-icon"
+                    onerror="this.style.display='none'">
+                <div class="app-name">NConnect Parent App</div>
+                <div class="app-meta" style="margin-bottom:12px;">EdTech School Management</div>
+                <div class="app-stats">
+                    <div class="stat">
+                        <svg viewBox="0 0 24 24" fill="#f59e0b">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <span class="stat-val">4.1</span><span class="stat-lbl">Rating</span>
+                    </div>
+                    <div class="stat">
+                        <svg viewBox="0 0 24 24" fill="#60a5fa">
+                            <path d="M12 16l-6-6h4V4h4v6h4l-6 6zm-7 2h14v2H5v-2z" />
+                        </svg>
+                        <span class="stat-val">50K+</span><span class="stat-lbl">Downloads</span>
+                    </div>
+                    <div class="stat">
+                        <svg viewBox="0 0 24 24" fill="#a78bfa">
+                            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+                        </svg>
+                        <span class="stat-val">3K+</span><span class="stat-lbl">Reviews</span>
+                    </div>
+                </div>
+                <p class="app-desc">Parent-teacher communication platform used across Narayana education groups enabling
+                    real-time chat SDKs and administrative operations.</p>
+                <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.nspira.nconnect"
+                    target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M3.18 23.76c.35.2.76.21 1.12.04l12.44-7.18-2.7-2.7-10.86 9.84zM.54 1.07C.2 1.42 0 1.97 0 2.69v18.63c0 .72.2 1.27.55 1.61l.08.07 10.44-10.44v-.23L.62 1.0l-.08.07zM20.37 10.27l-2.77-1.6-3.03 3.03 3.03 3.03 2.79-1.61c.8-.46.8-1.21-.02-1.85zM4.3.24L16.74 7.42l-2.7 2.7L4.3.24z" />
+                    </svg>
+                    Google Play
+                </a>
+            </div>
+            <div class="app-screens-wrapper fade-in">
+                <div class="app-screens nconnect-screens">
+                    <img src="assets/images/apps/com.nspira.nconnect_screen_0.png" alt="NConnect screen"
+                        class="app-screen" onerror="this.style.display='none'">
+                    <img src="assets/images/apps/com.nspira.nconnect_screen_1.png" alt="NConnect screen"
+                        class="app-screen" onerror="this.style.display='none'">
+                    <img src="assets/images/apps/com.nspira.nconnect_screen_2.png" alt="NConnect screen"
+                        class="app-screen" onerror="this.style.display='none'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIDDEN VENTURES SECTION -->
+    <div id="ventures-wrapper" class="fade-in">
+        <button id="toggle-ventures">Early Startup Ventures</button>
     </div>
-    <div class="ap-slider">
-      <div class="sl-vp" id="sl0">
-        <img class="sl-img" src="https://img.utdstc.com/screen/4e9/8e6/4e98e6849ffc71ecbaad9a486c9450abb707826a6031c60d52b3c80a06aa72d8" alt="screenshot" loading="lazy">
-        <img class="sl-img" src="https://img.utdstc.com/screen/5e8/980/5e8980284d67c0208a9bdc4491b9a794c4f12b0942c68f5398300e9c41c2a372" alt="screenshot" loading="lazy">
-        <img class="sl-img" src="https://img.utdstc.com/screen/9e7/c4d/9e7c4d86320279d0f23ade477924519f2d328d3c3ce6404463bbad33250666ac" alt="screenshot" loading="lazy">
-        <img class="sl-img" src="https://img.utdstc.com/screen/af3/7db/af37dbe1b4d468a296c59e5335ff29395543e3e92166e632e5113fb0e4151742" alt="screenshot" loading="lazy">
-        <img class="sl-img" src="https://img.utdstc.com/screen/561/f38/561f383230311d2918aeff52c2e6f7bae7ac42675d453f61db93d8c812e4338c" alt="screenshot" loading="lazy">
-        <img class="sl-img" src="https://img.utdstc.com/screen/70a/672/70a6725101bfdfdf862690ffa01239cab4fca35910e3e2dcac2fe8f74930ff8f" alt="screenshot" loading="lazy">
-      </div>
-      <div class="sl-nav">
-        <button class="sl-btn" onclick="slLeft('sl0')">&#8592;</button>
-        <button class="sl-btn" onclick="slRight('sl0')">&#8594;</button>
-      </div>
-    </div>
-  </div>
 
-  <!-- Panel 1 -->
-  <div class="app-panel" id="ap1">
-    <div>
-      <div class="ap-badge">📚 EdTech</div>
-      <div class="ap-name">Epic! – Kids Books</div>
-      <div class="ap-co">BYJU's &middot; Senior Android Engineer &middot; Jan 2022 &ndash; May 2024</div>
-      <p class="ap-desc">Epic! is a leading digital library for children with 40,000+ books, audiobooks, and educational videos. A core product within the BYJU's ecosystem serving students globally.</p>
-      <ul class="ap-ul">
-        <li>Built &amp; scaled a reusable doubt-resolution SDK, increasing daily queries by 40%</li>
-        <li>Backend-driven pricing with A/B testing boosted annual subscriptions by 12%</li>
-        <li>"Next in Series" + Book Recommendation System drove 8% higher completion rates</li>
-        <li>Coordinated monetization rollouts across US, UK &amp; India markets</li>
-      </ul>
-      <div class="ap-tech"><span class="tech">SDK Dev</span><span class="tech">A/B Testing</span><span class="tech">Feature Flags</span><span class="tech">Kotlin</span><span class="tech">Hilt</span></div>
-      <br><br>
-      <a href="https://play.google.com/store/apps/details?id=com.getepic.Epic" target="_blank" class="ap-link">View on Play Store &rarr;</a>
-    </div>
-    <div class="ap-slider">
-      <div class="sl-vp" id="sl1">
-        <img class="sl-img" src="https://img.utdstc.com/screen/aff/ddc/affddc04084083e2d2b30eb373ea12c5806f69bbd4617e0a39c3c719bd5528de" alt="screenshot" loading="lazy">
-        <img class="sl-img" src="https://img.utdstc.com/screen/412/7ff/4127ff02fa492fe90510ffc949377d40ab34a8be8f5b11f153c1f2d2ac34719f" alt="screenshot" loading="lazy">
-        <img class="sl-img" src="https://img.utdstc.com/screen/c74/fa3/c74fa3a3a1fbae9068265508b71fec626b184e210b18bf6a30df64d20af9e508" alt="screenshot" loading="lazy">
-        <img class="sl-img" src="https://img.utdstc.com/screen/31b/b23/31bb231a79344c56354fa4220494bef02bea43746d488ea0abaa65e53427f8b8" alt="screenshot" loading="lazy">
-      </div>
-      <div class="sl-nav">
-        <button class="sl-btn" onclick="slLeft('sl1')">&#8592;</button>
-        <button class="sl-btn" onclick="slRight('sl1')">&#8594;</button>
-      </div>
-    </div>
-  </div>
+    <!-- The structural close button logic was specifically requested completely removed natively -->
+    <section id="ventures-content">
+        <div class="sec-tag fade-in">Early Ventures</div>
+        <h2 class="sec-h fade-in">Startup engineering.</h2>
 
-  <!-- Panel 2 -->
-  <div class="app-panel" id="ap2">
-    <div>
-      <div class="ap-badge">🏥 HealthTech</div>
-      <div class="ap-name">MediBuddy</div>
-      <div class="ap-co">MediBuddy &middot; SDE-3 Android &middot; Feb 2019 &ndash; Jan 2022</div>
-      <p class="ap-desc">India's premier digital healthcare platform with online doctor consultations, medicine delivery, lab tests, health checks, and cashless insurance services.</p>
-      <ul class="ap-ul">
-        <li>Led team of 3 engineers through major rebranding, revamping 50+ screens on deadline</li>
-        <li>Apache Lucene search re-architecture — reduced search latency by 90 seconds per consultation</li>
-        <li>Firebase Remote Config pricing drove 15% higher renewal rates</li>
-        <li>Maintained 99.9% crash-free users while scaling from 3.5k to 8k daily consultations</li>
-      </ul>
-      <div class="ap-tech"><span class="tech">Apache Lucene</span><span class="tech">Firebase</span><span class="tech">Kotlin</span><span class="tech">MVVM</span><span class="tech">Room</span></div>
-      <br><br>
-      <a href="https://play.google.com/store/apps/details?id=in.medibuddy" target="_blank" class="ap-link">View on Play Store &rarr;</a>
-    </div>
-    <div class="ap-slider">
-      <div class="sl-vp" id="sl2">
-        <img class="sl-img" src="https://img.utdstc.com/screen/822/9e5/8229e5063355b3bfe0fdd3125793e5a80901a9da69dae87e4e5b8b8334a7ba37" alt="screenshot" loading="lazy">
-        <img class="sl-img" src="https://img.utdstc.com/screen/553/578/553578a92e2f176e250c793b84107a4c31f724472c64ca45401548cf18e2617a" alt="screenshot" loading="lazy">
-        <img class="sl-img" src="https://img.utdstc.com/screen/3f4/8f7/3f48f70ba246bff0db3b4812a786872a6045d4769e49f2f021fd20e747deed96" alt="screenshot" loading="lazy">
-        <img class="sl-img" src="https://img.utdstc.com/screen/e57/542/e57542af535649f074f19c6513c4fc37fd7e70a64c8de405ddced8db2021dcab" alt="screenshot" loading="lazy">
-        <img class="sl-img" src="https://img.utdstc.com/screen/2c7/4f5/2c74f5e1f24d86bc3fd33342e3c02db5f22bc5b1fcf6554d78607c8b5a664196" alt="screenshot" loading="lazy">
-      </div>
-      <div class="sl-nav">
-        <button class="sl-btn" onclick="slLeft('sl2')">&#8592;</button>
-        <button class="sl-btn" onclick="slRight('sl2')">&#8594;</button>
-      </div>
-    </div>
-  </div>
+        <div class="app-card fade-in">
+            <div class="app-info">
+                <div class="app-name">SurgeGrowth</div>
+                <div class="app-meta">Early-Stage Paywall SDK (2024)</div>
+                <p class="app-desc">Originally engineered as a high-performance in-app purchase and subscription
+                    management SDK, SurgeGrowth provided developers with seamless remote paywall orchestration prior to
+                    its strategic pivot toward AI architectures.</p>
+                <ul class="exp-ul" style="margin-top:16px;">
+                    <li>Engineered the core Android module responsible for directly fetching Google Play products and
+                        live pricing endpoints.</li>
+                    <li>Implemented controlled remote paywalls, allowing A/B iterated monetization flows dynamically.
+                    </li>
+                </ul>
+            </div>
+            <div class="app-screens-wrapper fade-in" style="cursor: default;">
+                <div class="app-screens">
+                    <img src="assets/images/apps/surgegrowth_ui.png" alt="SurgeGrowth architecture" class="app-screen"
+                        onerror="this.style.display='none'">
+                </div>
+            </div>
+        </div>
 
-  <!-- Panel 3 -->
-  <div class="app-panel" id="ap3">
-    <div>
-      <div class="ap-badge">🎓 EdTech</div>
-      <div class="ap-name">nConnect — Narayana</div>
-      <div class="ap-co">Nspira Management &middot; Android Developer &middot; Mar 2018 &ndash; Feb 2019</div>
-      <p class="ap-desc">Parent-teacher communication platform for Narayana Education Group. Included NConnect (parents) and NStaff (teachers) — two apps serving one of India's largest education networks.</p>
-      <ul class="ap-ul">
-        <li>Built both apps from scratch — 50k+ downloads within 4 months of launch</li>
-        <li>WebSocket-based real-time chat SDK for parent-teacher-admin communication</li>
-        <li>Academic dashboards, attendance tracking, and push notifications integrated</li>
-      </ul>
-      <div class="ap-tech"><span class="tech">WebSockets</span><span class="tech">FCM</span><span class="tech">Kotlin</span><span class="tech">Chat SDK</span><span class="tech">Room</span></div>
-      <br><br>
-      <a href="https://play.google.com/store/apps/details?id=com.nspira.nconnect" target="_blank" class="ap-link">View on Play Store &rarr;</a>
-    </div>
-    <div class="ap-slider">
-      <div class="sl-vp" id="sl3">
-        <img class="sl-img" src="https://img.utdstc.com/screen/abb/295/abb29518a439822ee90827ed87e663ce68d70ce2a5c151b1f814c44580027997" alt="screenshot" loading="lazy">
-        <img class="sl-img" src="https://img.utdstc.com/screen/f96/6d0/f966d0262e4c10c7c022f0abb78e5e1848834a8fc629801f86d61fb4d0c07949" alt="screenshot" loading="lazy">
-        <img class="sl-img" src="https://img.utdstc.com/screen/34e/ec7/34eec7a79847edbf5cc74ba6b4d96a4595342979dfb0b5410d22a8e8a12d4100" alt="screenshot" loading="lazy">
-      </div>
-      <div class="sl-nav">
-        <button class="sl-btn" onclick="slLeft('sl3')">&#8592;</button>
-        <button class="sl-btn" onclick="slRight('sl3')">&#8594;</button>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="app-card fade-in">
+            <div class="app-info">
+                <div class="app-name">Swinguff</div>
+                <div class="app-meta">Social Music Player (2017)</div>
+                <p class="app-desc">An early-stage social music application allowing users to share, listen, and sync
+                    what their friends were streaming.</p>
+                <ul class="exp-ul" style="margin-top:16px;">
+                    <li>Integrated YouTube streaming APIs to serve audio streams reliably within a dedicated Android
+                        client.</li>
+                    <li>Built real-time social listening feeds reflecting live peer network activities.</li>
+                </ul>
+            </div>
+            <div class="app-screens-wrapper fade-in" style="cursor: default;">
+                <div class="app-screens">
+                    <img src="assets/images/apps/swinguff_ui.png" alt="Swinguff interface" class="app-screen"
+                        onerror="this.style.display='none'">
+                </div>
+            </div>
+        </div>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="sec-tag" data-n="05">Contact</div>
-  <h2 class="sec-h">Let's build<br>something <em>great</em></h2>
-  <div class="ct-grid">
-    <div>
-      <p class="ct-desc reveal">Open to senior Android roles, consulting, and interesting product collaborations. Based in Bengaluru, available globally for the right opportunity.</p>
-      <div class="ct-links reveal">
-        <a href="mailto:official.achauhan@gmail.com" class="ct-link"><div><div class="ct-label">Email</div><div class="ct-val">official.achauhan@gmail.com</div></div><div class="ct-arr">&rarr;</div></a>
-        <a href="https://linkedin.com/in/ajayandroiddev" target="_blank" class="ct-link"><div><div class="ct-label">LinkedIn</div><div class="ct-val">linkedin.com/in/ajayandroiddev</div></div><div class="ct-arr">&rarr;</div></a>
-        <a href="https://github.com/meajay" target="_blank" class="ct-link"><div><div class="ct-label">GitHub</div><div class="ct-val">github.com/meajay</div></div><div class="ct-arr">&rarr;</div></a>
-        <a href="tel:+919870437097" class="ct-link"><div><div class="ct-label">Phone</div><div class="ct-val">+91 98704 37097</div></div><div class="ct-arr">&rarr;</div></a>
-      </div>
-    </div>
-    <div class="reveal">
-      <div class="ct-form">
-        <input type="text" class="ct-input" placeholder="Your name">
-        <input type="email" class="ct-input" placeholder="Your email">
-        <input type="text" class="ct-input" placeholder="Subject">
-        <textarea class="ct-input" placeholder="Your message"></textarea>
-        <button class="ct-submit" id="ct-btn">Send Message &rarr;</button>
-      </div>
-    </div>
-  </div>
-</section>
+        <!-- Button intentionally removed enabling smooth auto-collapse architecture -->
+        <div style="height: 40px;"></div>
+    </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-l">&copy; 2026 Ajay Chauhan &middot; Senior Android Engineer &middot; Bengaluru</div>
-  <div class="footer-r">
-    <a href="https://linkedin.com/in/ajayandroiddev" target="_blank" class="fsoc">in</a>
-    <a href="https://github.com/meajay" target="_blank" class="fsoc">gh</a>
-    <a href="#hero" class="fsoc">&uarr;</a>
-  </div>
-</footer>
+    <section id="contact">
+        <div class="sec-tag fade-in">Contact</div>
+        <h2 class="sec-h fade-in">Let's connect.</h2>
+        <div class="contact-grid">
+            <div class="fade-in">
+                <p class="hero-desc" style="font-size:16px;">Currently open to senior Android roles, highly complex
+                    consulting tasks, and robust product collaborations globally.</p>
+                <div class="exp-ul">
+                    <li style="margin-bottom:12px; color:var(--text); font-weight:500;">Email: <a
+                            href="mailto:official.achauhan@gmail.com"
+                            style="color:var(--text-muted); font-weight:normal; text-decoration:none;">official.achauhan@gmail.com</a>
+                    </li>
+                    <li style="margin-bottom:12px; color:var(--text); font-weight:500;">LinkedIn: <a
+                            href="https://linkedin.com/in/mobiledevajay" target="_blank" rel="noopener noreferrer"
+                            style="color:var(--text-muted); font-weight:normal; text-decoration:none;">linkedin.com/in/mobiledevajay</a>
+                    </li>
+                    <li style="color:var(--text); font-weight:500;">GitHub: <a href="https://github.com/meajay"
+                            target="_blank" rel="noopener noreferrer"
+                            style="color:var(--text-muted); font-weight:normal; text-decoration:none;">github.com/meajay</a>
+                    </li>
+                </div>
+            </div>
+            <div class="fade-in">
+                <!-- Formspree Integration -->
+                <form action="https://formspree.io/f/YOUR_ID" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-input" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-input" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" class="form-input" placeholder="How can I help you?"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-<script>
-// CURSOR
-const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
-(function animC(){
-  cur.style.left=mx+'px';cur.style.top=my+'px';
-  rx+=(mx-rx)*.11;ry+=(my-ry)*.11;
-  ring.style.left=rx+'px';ring.style.top=ry+'px';
-  requestAnimationFrame(animC);
-})();
-document.querySelectorAll('a,button,.app-tab').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';ring.style.width='54px';ring.style.height='54px';ring.style.borderColor='rgba(168,85,247,.7)';});
-  el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';ring.style.width='38px';ring.style.height='38px';ring.style.borderColor='rgba(168,85,247,.5)';});
-});
-
-// SCROLL REVEAL
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('vis'),i*80);});
-},{threshold:.08});
-document.querySelectorAll('.reveal,.tl-item').forEach(el=>obs.observe(el));
-
-// NAV HIGHLIGHT
-const secs=document.querySelectorAll('section[id]'),navAs=document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll',()=>{
-  let c='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)c=s.id;});
-  navAs.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+c?'var(--purple-lt)':'';});
-});
-
-// APP TABS
-function switchApp(i){
-  document.querySelectorAll('.app-tab').forEach((t,j)=>t.classList.toggle('active',j===i));
-  document.querySelectorAll('.app-panel').forEach((p,j)=>p.classList.toggle('active',j===i));
-}
-
-// SLIDER
-function slLeft(id){document.getElementById(id).scrollBy({left:-200,behavior:'smooth'});}
-function slRight(id){document.getElementById(id).scrollBy({left:200,behavior:'smooth'});}
-
-// CONTACT SUBMIT
-document.getElementById('ct-btn').addEventListener('click',function(){
-  this.textContent='Message Sent ✦';
-  this.style.background='linear-gradient(135deg,#059669,#10b981)';
-  setTimeout(()=>{this.textContent='Send Message →';this.style.background='';},3000);
-});
-</script>
+    <footer>
+        <div>&copy; 2026 Ajay Chauhan.</div>
+        <div class="footer-icons">
+            <a href="https://github.com/meajay" target="_blank" rel="noopener noreferrer" class="nav-icon"
+                aria-label="GitHub">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+            </a>
+            <a href="https://linkedin.com/in/mobiledevajay" target="_blank" rel="noopener noreferrer" class="nav-icon"
+                aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+            </a>
+            <a href="mailto:official.achauhan@gmail.com" class="nav-icon" aria-label="Email">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 12.713l11.985-8.71C23.593 2.148 21.848 1 19.8 1H4.2C2.145 1 .403 2.152.015 4.004L12 12.713zM0 6.643v11.15C0 19.897 1.813 21 4.2 21h15.6c2.387 0 4.2-1.103 4.2-3.207V6.643L12 15.356 0 6.643z" />
+                </svg>
+            </a>
+        </div>
+    </footer>
 </body>
+
 </html>

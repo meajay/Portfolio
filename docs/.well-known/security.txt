@@ -1,0 +1,4 @@
+Contact: mailto:official.achauhan@gmail.com
+Preferred-Languages: en
+Canonical: https://ajaychauhan.dev/.well-known/security.txt
+Policy: Please report any security vulnerabilities responsibly via email before public disclosure.
