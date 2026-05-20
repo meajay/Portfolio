@@ -201,4 +201,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Mobile Menu Toggle Logic
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const navAnchors = document.querySelectorAll('.nav-links a');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('show');
+        });
+
+        navAnchors.forEach(anchor => {
+            anchor.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('show');
+            });
+        });
+    }
 });
