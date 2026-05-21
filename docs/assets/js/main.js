@@ -65,6 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
             let scrollLeftPos = 0;
 
             wrapper.addEventListener('mousedown', (e) => {
+                const isMobile = window.innerWidth < 900;
+                const isVenture = wrapper.closest('#ventures-content') !== null;
+                if (isMobile && isVenture) return;
+
                 isScrubbing = false;
                 isDown = true;
                 wrapper.classList.add('active');
