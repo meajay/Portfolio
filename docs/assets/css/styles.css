@@ -425,13 +425,14 @@ section:last-child {
   transform: perspective(1000px) translateY(-4px);
 }
 
-.app-icon {
-  width: 68px;
-  height: 68px;
-  border-radius: 16px;
-  object-fit: cover;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.venture-image-container {
+  width: 100%;
+  margin-top: 16px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .app-name {
@@ -740,32 +741,16 @@ footer {
   }
 
   /* Completely Flatten Ventures section (Hard Disable Scroll/Slider) */
-  #ventures-content .app-screens-wrapper {
-    overflow: hidden !important;
-    cursor: default !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    touch-action: none !important;
+  .venture-image-container {
+    margin-top: 24px;
   }
 
-  #ventures-content .app-screens {
-    display: block !important;
+  .venture-image-container .app-screen {
     width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    white-space: normal !important;
-    transform: none !important;
-  }
-
-  #ventures-content .app-screen {
     height: auto !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 0 16px 0 !important;
     display: block !important;
-    border-radius: 8px !important;
-    pointer-events: none !important;
+    border-radius: 8px;
+    pointer-events: none;
   }
 
   #ventures-content .app-screen:last-child {
