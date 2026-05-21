@@ -117,7 +117,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function autoScroll() {
             const isHovering = slider.dataset.hovering === "true";
-            if (!isHovering) {
+            const isMobile = window.innerWidth < 900;
+            const isVenture = slider.closest('#ventures-content') !== null;
+
+            if (!isHovering && !(isMobile && isVenture)) {
                 fractionAcc += (0.9 * direction);
 
                 if (Math.abs(fractionAcc) >= 1) {

@@ -739,6 +739,31 @@ footer {
     gap: 24px;
   }
 
+  /* Only remove sliding for Ventures section */
+  #ventures-content .app-screens-wrapper {
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  #ventures-content .app-screens {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+  }
+
+  #ventures-content .app-screen {
+    height: auto;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* Ensure App Showcase (NConnect) retains scroll */
+  #apps .app-screens-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -758,9 +783,13 @@ footer {
     padding: 50px 4vw;
   }
 }
+
 /* Final Responsive Overrides */
 @media (max-width: 600px) {
-  .menu-toggle { display: flex !important; }
+  .menu-toggle {
+    display: flex !important;
+  }
+
   .nav-links {
     position: fixed;
     top: 0;
@@ -776,8 +805,23 @@ footer {
     border-left: 1px solid var(--border);
     z-index: 100;
   }
-  .nav-links.show { right: 0; }
-  .nav-links a { font-size: 24px; font-weight: 700; margin-bottom: 20px; }
-  .hero-h1 { font-size: 42px !important; letter-spacing: -1.5px !important; }
-  section { padding: 40px 5vw !important; }
+
+  .nav-links.show {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .hero-h1 {
+    font-size: 42px !important;
+    letter-spacing: -1.5px !important;
+  }
+
+  section {
+    padding: 40px 5vw !important;
+  }
 }
